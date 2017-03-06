@@ -14,6 +14,7 @@
   <ItemGroup>
     <!-- Files not to show in IDE -->
     <None Remove="Properties\PublishProfiles\CrankBank20170305112227 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\CrankBank20170305113235 - Web Deploy.pubxml" />
     <None Remove="yarn.lock" />
 
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
@@ -24,6 +25,7 @@
     <Content Include="wwwroot\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
