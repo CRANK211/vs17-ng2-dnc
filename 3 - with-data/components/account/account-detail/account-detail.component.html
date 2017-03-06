@@ -1,0 +1,6 @@
+﻿<div class="panel panel-default ">
+    <account-summary *ngIf="accountDetail" [account]="accountDetail.accountSummary"></account-summary>
+
+</div>
+<hr />
+<account-activity *ngIf="accountDetail" [accountTransactions]="accountDetail.accountTransactions"></account-activity>

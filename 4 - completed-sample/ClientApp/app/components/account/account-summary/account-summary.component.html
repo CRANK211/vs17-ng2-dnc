@@ -1,0 +1,12 @@
+﻿<div class="well well-sm mouseOver" (click)="navigateToDetail()">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 ">
+            <h3>{{ account.name }}</h3>
+            <span>{{ account.accountNumber | formatAccountNumber }}</span>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+            <h3>{{ account.balance | currency:"USD":true:"1.2-2" }}</h3>
+            <span>Available Balance</span>
+        </div>
+    </div>
+</div>

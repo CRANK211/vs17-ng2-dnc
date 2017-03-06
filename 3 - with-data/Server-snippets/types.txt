@@ -1,0 +1,27 @@
+    public enum AccountType
+    {
+        Checking,
+        Savings,
+        Credit
+    }
+
+    public class AccountSummary
+    {
+        public string AccountNumber { get; set; }
+        public AccountType Type { get; set; }
+        public string Name { get; set; }
+        public double Balance { get; set; }
+    }
+
+    public class AccountTransaction
+    {
+        public DateTimeOffset TransactionDate { get; set; }
+        public string Description { get; set; }
+        public double Amount { get; set; }
+    }
+
+    public class AccountDetail
+    {
+        public AccountSummary AccountSummary { get; set; }
+        public AccountTransaction[] AccountTransactions { get; set; }
+    }

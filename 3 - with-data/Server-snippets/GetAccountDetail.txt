@@ -1,0 +1,21 @@
+        [HttpGet("[action]/{id}")]
+        public IActionResult GetAccountDetail(string id)
+        {
+            var summary = _accountSummaries.FirstOrDefault(a => a.AccountNumber == id);
+            if (summary == null)
+                return NotFound();
+
+            var random = new Random();
+            var transactions = new List<AccountTransaction>();
+            for (int i = 0; i < 15; i++)
+            {
+                transactions.Add(new AccountTransaction
+                {
+                    TransactionDate = DateTimeOffset.Now - TimeSpan.FromDays(i),
+                    Description = $"Server transaction #{i}",
+                    Amount = random.NextDouble() * 500 - 250
+                });
+            }
+
+            return new ObjectResult (new AccountDetail { AccountSummary = summary, AccountTransactions = transactions.ToArray() });
+        }

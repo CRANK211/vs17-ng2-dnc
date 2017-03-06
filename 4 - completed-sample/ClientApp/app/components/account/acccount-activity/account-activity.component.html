@@ -1,0 +1,22 @@
+﻿<h4>Activity</h4>
+<div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-default active">Transactions</button>
+    <button type="button" class="btn btn-default">Deposits</button>
+    <button type="button" class="btn btn-default">Withdrawals</button>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th class="text-right">Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of accountTransactions">
+            <td>{{ transaction.transactionDate | date}}</td>
+            <td>{{ transaction.description }}</td>
+            <td class="text-right">{{ transaction.amount | currency:"USD":true:"1.2-2"}}</td>
+        </tr>
+    </tbody>
+</table>
