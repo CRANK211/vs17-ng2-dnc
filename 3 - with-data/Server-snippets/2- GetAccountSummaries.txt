@@ -1,0 +1,11 @@
+        private static AccountSummary[] _accountSummaries = new AccountSummary[] {
+                new AccountSummary{ AccountNumber = "012-123-1234", Type = AccountType.Checking, Name = "John's Checking - server", Balance = 1234.56},
+                new AccountSummary{ AccountNumber = "567-234-5586", Type = AccountType.Savings, Name = "John's Holiday Stash - server", Balance = 5000.27},
+                new AccountSummary{ AccountNumber = "9999-2222-3333-4444", Type = AccountType.Credit, Name = "Platinum Card - server", Balance = 1234.56},
+            };
+
+        [HttpGet("[action]")]
+        public IActionResult GetAccountSummaries()
+        {
+            return new ObjectResult(_accountSummaries);
+        }

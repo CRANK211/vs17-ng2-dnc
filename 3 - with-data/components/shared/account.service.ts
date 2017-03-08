@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 import 'rxjs/Rx';
 
 import { AccountSummary } from './account-summary.type';
-import { AccountDetail } from './account-detail.type';
+//import { AccountDetail } from './account-detail.type';
 import { AccountType } from './account-type.enum';
 
 @Injectable()
@@ -19,9 +19,9 @@ export class AccountService {
             .toPromise();
     }
 
-    getAccountDetail(id: string) {
-        return this.http.get(`api/Bank/GetAccountDetail/${id}`)
-            .map(response => response.json() as AccountDetail)
-            .toPromise();
-    }
+    // getAccountDetail(id: string) {
+    //     return this.http.get(`api/Bank/GetAccountDetail/${id}`)
+    //         .map(response => response.json() as AccountDetail)
+    //         .toPromise();
+    // }
 }

@@ -8,11 +8,8 @@ import { Router } from '@angular/router';
     styleUrls: ['./account-summary.component.css']
 })
 export class AccountSummaryComponent {
-    constructor(private router: Router) {
+    constructor() {
     }
 
-    navigateToDetail() {
-        this.router.navigate(['detail', '123456']);
-    }
 }
     
